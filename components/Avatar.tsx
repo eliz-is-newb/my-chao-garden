@@ -106,18 +106,3 @@ export default function Avatar({
             </div>
           )
         }
-
-        // <img className="h-20 w-20 object-cover rounded-full" src="https://sahilnetic.xyz/sahilnetic.png" alt="Current profile photo" />
-        // </div> 
-        // <label className="block pt-2">
-        //   <span className="sr-only t-2">Choose profile photo</span>
-        //   <input 
-          
-        //   type="file" className="w-full text-sm text-slate-500
-        //     file:mr-4 file:py-2 file:px-4
-        //     file:rounded-full file:border-0
-        //     file:text-sm file:font-semibold
-        //     file:bg-pink-300 file:text-zinc-900
-        //     hover:file:bg-rose-300
-        //   "/>
-        // </label>

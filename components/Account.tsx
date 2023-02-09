@@ -3,6 +3,8 @@ import { useUser, useSupabaseClient, Session } from '@supabase/auth-helpers-reac
 import { Database } from '../utils/database.types'
 import Avatar from './Avatar'
 type Profiles = Database['public']['Tables']['profiles']['Row']
+import Link from "next/link";
+
 
 
 export default function Account({ session }: { session: Session }) {
@@ -80,19 +82,25 @@ export default function Account({ session }: { session: Session }) {
     
 
     return (
-      <div className='bg-white text-black'>
+      <div className='text-black flex flex-col md:flex-row'>
       {/* experimenting */}
 
       {/* The button to open modal */}
-<label htmlFor="my-modal" className="btn  self-center w-36 text-sm text-slate-500
- py-2 px-1 
- 
-  rounded-full border-0
-  text-sm font-semibold lowercase
-   bg-pink-300 text-zinc-900
-  hover:bg-rose-300">user settings</label>
+<label htmlFor="my-modal" className="btn btn-xs h-[30px] w-full text-xs  
 
-{/* Put this part before </body> tag */}
+
+ mt-5 text-white
+  rounded-xl border-2 border-base-100 
+  text-sm font-semibold lowercase
+   bg-blue-200  hover:text-white hover:bg-blue-300 hover:border-transparent
+  hover:bg-white">user settings</label>
+
+
+{/* welcome button */}
+
+<Link href="/Welcome"><button className="btn w-56 h-56 ml-5 mt-6 rounded-xl bg-white border-2 border-base-100 lowercase hover:bg-white hover:border-transparent text-black  shadow-2xl"> Welcome </button></Link>
+
+
 <input type="checkbox" id="my-modal" className="modal-toggle" />
 <div className="modal">
   <div className="modal-box bg-white">
@@ -101,26 +109,24 @@ export default function Account({ session }: { session: Session }) {
         <div className="flex justify-between container mx-auto">
         <div className="w-full">
         <div className="-mt-2 px-4 mx-2">
-        <h1 className="text-3xl font-semibold py-7 px-5">addbyme</h1>
+        <h1 className="text-3xl font-semibold py-7 px-5">mychaogarden</h1>
 
 
 
-        <div className='mx-80 -mt-4 ml-3'>
 
-<button className="btn self-center w-36 text-sm text-slate-500
- py-2 px-1 
+<div className="modal-action -mt-[36px] mr-[150px]">
+  {/* button to close the menu */}
+      <label htmlFor="my-modal" className="btn text-center text-slate-500
+ py-2 px-1  w-32
  
-  rounded-full border-0
-  text-sm font-semibold lowercase
-   bg-pink-300 text-zinc-900
-  hover:bg-rose-300" onClick={() => supabase.auth.signOut()}>
-    Sign Out
- </button>
-</div>
+  rounded-full
+  text-xs hover:bg-transparent hover:border-transparent border-transparent
+   text-zinc-900 hover:scale-125 bg-transparent lowercase
+  ">click to close menu</label>
+    </div>
 
 
-
-        <h1 className="font-thinner flex text-4xl pt-10 px-5">Setup Your ABM Id
+        <h1 className="font-thinner flex text-3xl pt-10 px-5 -mt-6">edit ur details
         </h1>
 
         <div className="shrink-0 mt-5">
@@ -142,17 +148,19 @@ export default function Account({ session }: { session: Session }) {
           <span className="text-md font-semibold text-zinc-900">
             Username:
           </span>
-          <input className="w-full bg-transparent p-0 text-sm  text-gray-500 focus:outline-none" id="username" type="text"  
+          <input className="w-full bg-transparent text-sm  text-gray-500  focus:outline-none" id="username" type="text"  
           value={username ||''} onChange={(e) => setUsername(e.target.value)} />
         </label>
         <div className="mt-5">
-        <label className="input-field inline-flex items-baseline border-2 border-black rounded  p-4">
-        <span className="flex-none text-dusty-blue-darker select-none leading-none">your email: 
+        <label className="input-field inline-flex items-baseline border-2 border-zinc-300  text-sm rounded  p-4">
+        <span className="flex-none text-dusty-blue-darker select-none leading-none">
+
+           {/*email icon here  */}
         </span>
 
 
         <div className="flex-1 leading-none">
-        <input id="email" type="text" className="w-full pl-1 bg-transparent focus:outline-none" name="email"  value={session.user.email} disabled />
+        <input id="email" type="text" className="w-full pl-1 bg-transparent  focus:outline-none" name="email"  value={session.user.email} disabled />
         </div>
         </label>
         </div>
@@ -176,7 +184,7 @@ export default function Account({ session }: { session: Session }) {
          
       
         
-        <button className="btn mt-5 border-2 px-5 py-2  ml-2 mt-2 w-32 border-black text-white  lowercase border-b-4  rounded-full translate-y-2 border-l-4"  onClick={() => updateProfile({ username, website, avatar_url })}
+        <button className="btn mt-5 border-2 px-5 py-2  btn-sm h-10 ml-32 -mt-4 w-24 border-black text-white  lowercase border-b-4  rounded-full translate-y-2 border-l-4"  onClick={() => updateProfile({ username, website, avatar_url })}
         disabled={loading}
       >
         {loading ? 'Loading ...' : 'Update'}
@@ -189,6 +197,19 @@ export default function Account({ session }: { session: Session }) {
         
         
         </div>
+
+        <div className='mx-80 -mt-[52px] ml-16'>
+
+<button className="btn self-center w-36 text-sm text-slate-500
+ py-2 px-1  w-24 btn-sm h-10
+ 
+  rounded-full border-0
+  text-sm font-semibold lowercase
+   bg-pink-300 text-zinc-900
+  hover:bg-rose-300" onClick={() => supabase.auth.signOut()}>
+    Sign Out
+ </button>
+</div>
         </div>
 
 
@@ -199,15 +220,6 @@ export default function Account({ session }: { session: Session }) {
 
 
 
-    <div className="modal-action -mt-[60px] mr-[40px] mb-10">
-      <label htmlFor="my-modal" className="btn text-center text-slate-500
- py-2 px-1  w-32
- 
-  rounded border-0 border-black rounded-full
-  text-xs hover:bg-transparent hover:border-none
-   bg-white text-zinc-900 hover:scale-125 hover:bg-white lowercase
-  ">click to close menu</label>
-    </div>
   </div>
 </div>
 

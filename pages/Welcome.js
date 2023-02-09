@@ -1,22 +1,17 @@
 import Link from "next/link";
-
+import GlobalNav from "../components/GlobalNav"
+import Folders from "../components/Folders";
+import Notes from "../components/Notes";
 
 export default function Welcome(){
     return (
        <>
-       <div
-       style={{
-        backgroundImage: "url(/ging-bg.jpg)",
-        backgroundSize: "cover",
-        backgroundRepeat:"repeat",
-        backgroundPosition: "50% 50%"
+       <div className=" flex flex-row gap-2  mt-2">
+      <GlobalNav />
 
-       }}
-       >
-hello
-
-       </div>
-       
-       
+      <Notes /> 
+      <Folders />
+      
+      </div>
        </>
     )}
