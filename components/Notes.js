@@ -5,10 +5,10 @@ import Avatar from "./Avatar";
 export default function Notes(){
     return (
        <>
-       <div className="flex flex-wrap gap-4 ml-40">
+       <div className="flex flex-wrap gap-4 ml-40 mt-2">
 
          {/* pinned notes */}
-       <div className="card card-compact  w-fit h-fit bg-base-100 shadow-xl">
+       <div className="card card-compact  w-40 h-fit bg-base-100 shadow-xl">
          <div className="card-body">
             <h2 className="text-xl">This is my first pinned note.</h2>
              <p>Duh</p>
