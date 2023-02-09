@@ -4,6 +4,7 @@ import { Database } from '../utils/database.types'
 import Avatar from './Avatar'
 type Profiles = Database['public']['Tables']['profiles']['Row']
 
+
 export default function Account({ session }: { session: Session }) {
     const supabase = useSupabaseClient<Database>()
     const user = useUser()
@@ -79,11 +80,27 @@ export default function Account({ session }: { session: Session }) {
     
 
     return (
+      <div className='bg-white text-black'>
+      {/* experimenting */}
 
-        <div className=" sm:mx-32 lg:mx-32 xl:mx-72 ">
+      {/* The button to open modal */}
+<label htmlFor="my-modal" className="btn  self-center w-36 text-sm text-slate-500
+ py-2 px-1 
+ 
+  rounded-full border-0
+  text-sm font-semibold lowercase
+   bg-pink-300 text-zinc-900
+  hover:bg-rose-300">user settings</label>
+
+{/* Put this part before </body> tag */}
+<input type="checkbox" id="my-modal" className="modal-toggle" />
+<div className="modal">
+  <div className="modal-box bg-white">
+    
+  <div className=" sm:mx-10 lg:mx-32 xl:mx-72 ">
         <div className="flex justify-between container mx-auto">
         <div className="w-full">
-        <div className="mt-4 px-4 mx-2">
+        <div className="-mt-2 px-4 mx-2">
         <h1 className="text-3xl font-semibold py-7 px-5">addbyme</h1>
 
 
@@ -94,7 +111,7 @@ export default function Account({ session }: { session: Session }) {
  py-2 px-1 
  
   rounded-full border-0
-  text-sm font-semibold
+  text-sm font-semibold lowercase
    bg-pink-300 text-zinc-900
   hover:bg-rose-300" onClick={() => supabase.auth.signOut()}>
     Sign Out
@@ -157,21 +174,9 @@ export default function Account({ session }: { session: Session }) {
           </label>
           
          
+      
         
-        {/* <h1 className="text-2xl font-semibold mt-5">Category :</h1>
-        <p className="text-black text-sm font-normal flex gap gap-2 pt-2">
-                  <button className="border-2 border-black rounded-md border-b-4 border-l-4 font-black px-2">Business</button>
-                  <button className="border-2 border-black rounded-md border-b-4 border-l-4 font-black px-2">Creative</button>
-                  <button className="border-2 border-black rounded-md border-b-4 border-l-4 font-black px-2">Education</button>
-        </p>
-        
-        <p className="text-black text-sm font-normal flex gap gap-2 pt-2">
-                  <button className="border-2 border-black rounded-md border-b-4 border-l-4 font-black px-2">Tech</button>
-                  <button className="border-2 border-black rounded-md border-b-4 border-l-4 font-black px-2">Entertainment</button>
-                  <button className="border-2 border-black rounded-md border-b-4 border-l-4 font-black px-2">Other</button>
-        </p> */}
-        
-        <button className="btn mt-5 border-2 px-5 py-2 rounded-lg border-black border-b-4 font-black translate-y-2 border-l-4"  onClick={() => updateProfile({ username, website, avatar_url })}
+        <button className="btn mt-5 border-2 px-5 py-2  ml-2 mt-2 w-32 border-black text-white  lowercase border-b-4  rounded-full translate-y-2 border-l-4"  onClick={() => updateProfile({ username, website, avatar_url })}
         disabled={loading}
       >
         {loading ? 'Loading ...' : 'Update'}
@@ -184,6 +189,34 @@ export default function Account({ session }: { session: Session }) {
         
         
         </div>
+        </div>
+
+
+
+
+
+
+
+
+
+    <div className="modal-action -mt-[60px] mr-[40px] mb-10">
+      <label htmlFor="my-modal" className="btn text-center text-slate-500
+ py-2 px-1  w-32
+ 
+  rounded border-0 border-black rounded-full
+  text-xs hover:bg-transparent hover:border-none
+   bg-white text-zinc-900 hover:scale-125 hover:bg-white lowercase
+  ">click to close menu</label>
+    </div>
+  </div>
+</div>
+
+      {/* end of experiment  */}
+
+       
+        
+        
+     
         </div>
 
 )

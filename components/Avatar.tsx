@@ -77,7 +77,7 @@ export default function Avatar({
               <div style={{ width: size }}>  
                 <label className="btn absolute avatar  text-xs text-slate-500
                 ml-[113px] py-2 px-4 -mt-[70px] text-center
-                   rounded-full border-0
+                   rounded-full border-0 lowercase
                    text-sm font-semibold
                     bg-pink-300 text-zinc-900
                    hover:bg-rose-300" htmlFor="single">
