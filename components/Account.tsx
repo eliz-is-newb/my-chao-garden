@@ -83,14 +83,14 @@ export default function Account({ session }: { session: Session }) {
         <div className=" sm:mx-32 lg:mx-32 xl:mx-72 ">
         <div className="flex justify-between container mx-auto">
         <div className="w-full">
-        <div className="mt-4 px-4">
+        <div className="mt-4 px-4 mx-2">
         <h1 className="text-3xl font-semibold py-7 px-5">addbyme</h1>
 
 
 
         <div className='mx-80 -mt-4 ml-3'>
 
-<button className="btn self-center w-full text-sm text-slate-500
+<button className="btn self-center w-36 text-sm text-slate-500
  py-2 px-1 
  
   rounded-full border-0
