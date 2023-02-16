@@ -8,9 +8,9 @@ export default function Notes(){
        <div className="flex flex-wrap gap-4 ml-40 mt-2">
 
          {/* pinned notes */}
-       <div className="card card-compact  w-40 h-fit bg-base-100 shadow-xl">
+       <div className="card card-compact hover:border-black border-2 w-40 h-fit bg-base-100 shadow-xl">
          <div className="card-body">
-            <h2 className="text-xl">This is my first pinned note.</h2>
+            <h2 className="text-m">This is my first pinned note.</h2>
              <p>Duh</p>
                 <div className=" justify-end flex flex-row gap-4 mt-5">
              <button className="btn btn-xs w-fit lowercase bg-base-100 border-none ">edit</button>
@@ -20,9 +20,9 @@ export default function Notes(){
      </div>
 
 
-     <div className="card card-compact  w-fit h-fit bg-base-100 shadow-xl">
+     <div className="card card-compact hover:border-black border-2 w-fit h-fit bg-base-100 shadow-xl">
          <div className="card-body">
-            <h2 className="text-xl">This morning's stream of consciousness</h2>
+            <h2 className="text-m">This morning's stream of consciousness</h2>
              <p>"AHHHHHHH"</p>
                 <div className=" justify-end flex flex-row gap-4 mt-5">
              <button className="btn btn-xs w-fit lowercase bg-base-100 border-none ">edit</button>
@@ -31,9 +31,9 @@ export default function Notes(){
          </div>
      </div>
 
-     <div className="card card-compact  w-fit h-fit bg-base-100 shadow-xl">
+     <div className="card card-compact hover:border-black border-2 w-fit h-fit bg-base-100 shadow-xl">
          <div className="card-body">
-            <h2 className="text-xl">Third demo note</h2>
+            <h2 className="text-m">Third demo note</h2>
              <p>rawr</p>
                 <div className=" justify-end flex flex-row gap-4 mt-5">
              <button className="btn btn-xs w-fit lowercase bg-base-100 border-none ">edit</button>

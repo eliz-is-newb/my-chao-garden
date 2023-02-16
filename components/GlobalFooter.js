@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function GlobalFooter(){
     return (
        <>
-       <div className="bg-pink-200 mt-20  px-14 w-full footer">
+       <div className="bg-pink-200 mt-20  px-10 w-full footer">
 
 
        <footer className="footer footer-center bg-pink-200  mt-5 text-white">

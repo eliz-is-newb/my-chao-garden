@@ -6,7 +6,8 @@ import Notes from "../components/Notes";
 export default function Welcome(){
     return (
        <>
-       <div className=" flex flex-row gap-2  mt-2 ">
+       <div className=" flex flex-row gap-2 -ml-5 mt-2 ">
+         
       <GlobalNav />
 
       <Notes /> 
